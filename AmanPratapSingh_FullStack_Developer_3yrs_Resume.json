@@ -1,0 +1,75 @@
+{
+  "name": "Aman Pratap Singh",
+  "email": "amanpratapsingh1440@gmail.com",
+  "phone": "+91-8920560095",
+  "linkedin": "https://www.linkedin.com/in/amanpratapsingh1440",
+  "urls": [
+    "https://github.com/amanpratapsingh14"
+  ],
+  "summary": "Full Stack Developer with 2.8 years of experience delivering production-grade web platforms. Proven\nexpertise in designing async REST APIs using FastAPI and Flask, optimizing PostgreSQL databases, and\ncontainerizing services with Docker for cloud-native deployments. Experienced in integrating AWS services\n(S3), building real-time background tasks using Celery and asyncio, and deploying pipelines using GitHub\nActions on GCP. Strong focus on clean architecture, measurable performance improvements, and\ncross-functional collaboration.\nKEY COMPETENCIES / TECHNICAL SKILLS\nLanguages & Frameworks: C++, Python Django, FastAPI, JavaScrip, Node.js, Express.js, React.js, Next.js.",
+  "skills": [
+    "C++",
+    "Python Django",
+    "FastAPI",
+    "JavaScrip",
+    "Node.js",
+    "Express.js",
+    "React.js",
+    "Next.js"
+  ],
+  "work_experience": [
+    {
+      "company": "Kitaabh Technologies Private Limited June",
+      "position": "Software Development Engineer I",
+      "duration": "2024 - Present",
+      "description": [
+        "Developed and scaled 80+ RESTful APIs across accounting modules like invoicing, ledgers, GST,",
+        "reports, audits, and balance sheets using FastAPI and PostgreSQL.",
+        "Automated CI/CD pipelines with GitHub Actions, Docker, and shell scripting for efficient and consistent",
+        "deployments.",
+        "Built reusable backend workflows for reporting, language support, dashboards, and invoice data",
+        "processing.",
+        "Boosted performance by 40% via async APIs, DB indexing, and response optimization.",
+        "Reduced reporting lag by 60% by modularizing logic and improving data streaming."
+      ]
+    },
+    {
+      "company": "Kiasa International Pvt. Ltd. June",
+      "position": "Software Development",
+      "duration": "2023 - May 2024",
+      "description": [
+        "Developed over 30+ secure RESTful APIs using Python and MSSQL, integrating robust authentication",
+        "(JWT/OAuth2) and encryption protocols for data security.",
+        "Optimized backend logic and query performance, achieving a 10% reduction in API response time",
+        "through code refactoring and MSSQL tuning.",
+        "Engineered scalable solutions for the Safeobuddy platform, improving UX and increasing traffic by 15%",
+        "through better API structuring and frontend-backend synergy.",
+        "Delivered 92% production-ready code within Agile sprints, meeting tight deadlines and supporting",
+        "global clients like Amazon, Flipkart, and Dart (USA, Kenya)."
+      ]
+    },
+    {
+      "company": "Galaxy Time Tour (Freelance / Industry Collaboration) May",
+      "position": "Full Stack Developer",
+      "duration": "2022 to Dec 2022",
+      "description": [
+        "Collaborated with a travel agency to deliver a production-grade booking platform built using React.js &",
+        "FastAPI.",
+        "Reduced frontend load time by 20% and automated 90% of manual ops.",
+        "Improved performance with lazy loading and automation, reducing manual tasks by 90% and load time",
+        "by 20%."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology – Computer Science & Engineering",
+      "university": "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
+      "years": "June 2019 - April 2023"
+    }
+  ],
+  "certifications": null,
+  "languages": null,
+  "projects": null,
+  "address": null
+}
