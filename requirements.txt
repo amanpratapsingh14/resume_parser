@@ -1,7 +1,16 @@
 pdfplumber
 python-docx
 spacy
-pydantic
-scikit-learn
 streamlit
-pytest
+numpy
+ollama
+docx2txt
+PyPDF2
+uvicorn
+fastapi
+pyresparser
+python-multipart
+pandas
+requests
+
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
