@@ -1,0 +1,46 @@
+Full Stack Developer with 2.8 years of experience delivering production-grade web platforms. Proven
+expertise in designing async REST APIs using FastAPI and Flask, optimizing PostgreSQL databases, and
+containerizing services with Docker for cloud-native deployments. Experienced in integrating AWS services
+(S3), building real-time background tasks using Celery and asyncio, and deploying pipelines using GitHub
+Actions on GCP. Strong focus on clean architecture, measurable performance improvements, and           
+cross-functional collaboration.
+Kitaabh Technologies Private Limited
+Bachelor of Technology – Computer Science & EngineeringSoftware Development Engineer I
+Key Responsibility 
+Developed and scaled 80+ RESTful APIs across accounting modules like invoicing, ledgers, GST,
+reports, audits, and balance sheets using FastAPI and PostgreSQL.
+Automated CI/CD pipelines with GitHub Actions, Docker, and shell scripting for efficient and consistent
+deployments.
+Built reusable backend workflows for reporting, language support, dashboards, and invoice data
+processing.
+Boosted performance by 40% via async APIs, DB indexing, and response optimization.
+Reduced reporting lag by 60% by modularizing logic and improving data streaming.June 2024 - PresentPROFILE SUMMARY Ph: +91-8920560095                                                                              Gmail: amanpratapsingh1440@gmail.com
+LinkedIn: in/amanpratapsingh1440/                                                       Github: github.com/amanpratapsingh14
+HackRank: amanpratap14                                                                       Leetcode: amanpratapsingh1440Aman Pratap Singh
+PROFESSIONAL EXPERIENCE
+EDUCATION
+Relevant Coursework:
+Computer Architecture, Object-Oriented Programming, Data Structures & Algorithms,
+Operating Systems, Web Development, Database Management Systems.KEY COMPETENCIES / TECHNICAL SKILLS
+Dr. A.P.J. Abdul Kalam Technical University (AKTU),  June 2019 - April 2023Languages & Frameworks: C++, Python Django, FastAPI, JavaScrip, Node.js, Express.js, React.js, Next.js.
+Databases: PostgreSQL, MSSQL, MongoDB, Redis.
+DevOps Tools: Docker, GitHub Actions, CI/CD, GCP, AWS, Shell Scripting, Postman.
+Concepts: REST API Design, Numpy, Pandas, DSA.
+Software DevelopmentJune 2023 - May 2024 Kiasa International Pvt. Ltd.
+Key Responsibility 
+Developed over 30+ secure RESTful APIs using Python and MSSQL, integrating robust authentication
+(JWT/OAuth2) and encryption protocols for data security.
+Optimized backend logic and query performance, achieving a 10% reduction in API response time
+through code refactoring and MSSQL tuning.
+Engineered scalable solutions for the Safeobuddy platform, improving UX and increasing traffic by 15%
+through better API structuring and frontend-backend synergy.
+Delivered 92% production-ready code within Agile sprints, meeting tight deadlines and supporting
+global clients like Amazon, Flipkart, and Dart (USA, Kenya).
+Galaxy Time Tour (Freelance / Industry Collaboration)
+Full Stack DeveloperMay 2022 to Dec 2022
+Key Responsibility 
+Collaborated with a travel agency to deliver a production-grade booking platform built using React.js &
+FastAPI.
+Reduced frontend load time by 20% and automated 90% of manual ops.
+Improved performance with lazy loading and automation, reducing manual tasks by 90% and load time
+by 20%.

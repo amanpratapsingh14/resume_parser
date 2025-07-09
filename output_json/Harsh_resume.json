@@ -1,0 +1,76 @@
+{
+  "name": "Harsh Sharma",
+  "email": "sharmalav1408@gmail.com",
+  "phone": "+91-8076994108",
+  "linkedin": "@harsh-sharma",
+  "summary": "Sr. FrontEnd Developer with nearly 4 years of experience, currently leading Angular development at Kiasa International across Logistics, HRM, and E-Commerce projects. Expertise in building scalable SPAs using Angular with strong command of component-based architecture and frontend best practices. Improved UI load times and operational accuracy through performance-focused development on high-traffic platforms. Mentored 3 junior developers in Angular best practices.",
+  "skills": [
+    "Scalable Web Architecture",
+    "User Experience Design",
+    "Agile Development Methodologies",
+    "Cross-Platform Integration",
+    "Performance Optimization Techniques",
+    "Data Visualization Strategies",
+    "Cloud-Based Solutions",
+    "E-commerce Development",
+    "Real-Time Data Processing",
+    "Team Leadership and Mentoring"
+  ],
+  "work_experience": [
+    {
+      "company": "Kiasa International",
+      "position": "Angular Developer (Team Lead)",
+      "duration": "Oct 2022 - Present",
+      "description": [
+        "Leading the development of a logistics management platform using Angular and .NET, ensuring seamless functionality and user experience.",
+        "Enhancing UI performance for a kids’ e-commerce platform through strategic code optimizations, significantly reducing load times.",
+        "Building a real-time corporate cab management system, streamlining operations and minimizing booking errors."
+      ]
+    },
+    {
+      "company": "Cubastion Consulting",
+      "position": "Full Stack Developer (Angular & Node)",
+      "duration": "Dec 2021 - Oct 2022",
+      "description": [
+        "Developed a unified HR management system using Angular and Node.js, streamlining payroll, attendance, and departmental workflows.",
+        "Built a real-time sales analytics dashboard for Daimler using Angular and PHP, enabling actionable insights into revenue trends.",
+        "Improved fleet management for Mitsubishi Fuso with an Angular-Node.js solution, enhancing data processing speed and operational efficiency."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech. (Computer Science)",
+      "university": "AKTU",
+      "years": "2021"
+    }
+  ],
+  "projects": [
+    "Smart HRM: Led UI development for employee management workflows using Angular.",
+    "DaimlerMercedes Project: Integrated interactive dashboards for sales analytics."
+  ],
+  "certifications": [
+    "Java Core",
+    "Python Programming (Basic)"
+  ],
+  "languages": [
+    "Hindi",
+    "English"
+  ],
+  "achievements": [
+    "Improved UI load time by 30% through targeted code optimization, enhancing application responsiveness.",
+    "Mentored three junior developers in Angular best practices, accelerating their skill development and team contribution.",
+    "Delivered a U.S.-based e-commerce platform that drove strong user engagement & sales growth.",
+    "Led multiple enterprise projects to successful completion, earning recognition for leadership and project management excellence."
+  ],
+  "responsibilities": [
+    "Contributed to agile, high-performance teams using tools like RxJS, Ag-Grid, Jira, and MySQL for scalable and maintainable development."
+  ],
+  "extra_curricular": [
+    "Active contributor to agile, high-performance teams using tools like RxJS, Ag-Grid, Jira, and MySQL for scalable and maintainable development."
+  ],
+  "address": "Sector 49, Gurugram, Haryana, 120018",
+  "urls": [
+    "https://www.linkedin.com/in/harsh-sharma"
+  ]
+}
