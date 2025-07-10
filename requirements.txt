@@ -1,16 +1,32 @@
-pdfplumber
-python-docx
-spacy
-streamlit
-numpy
-ollama
-docx2txt
-PyPDF2
-uvicorn
-fastapi
-pyresparser
-python-multipart
-pandas
-requests
+pdfplumber==0.11.7
+python-docx==1.2.0
+spacy==3.8.7
+streamlit==1.46.1
+numpy==2.3.1
+ollama==0.5.1
+docx2txt==0.9
+PyPDF2==3.0.1
+uvicorn==0.35.0
+fastapi==0.116.0
+pyresparser==1.0.6
+python-multipart==0.0.20
+pandas==2.3.1
+requests==2.32.4
 
-en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+# spaCy model is installed via: python -m spacy download en_core_web_sm
+# curl -fsSL https://ollama.com/install.sh | sh
+
+# add to reamdme
+
+# ollama run qwen3:0.6b
+
+# python -m spacy debug data app/spacy_config.cfg
+
+# python -m spacy train app/spacy_config.cfg --output ./ner_model
+
+# sudo pacman -S base-devel python-pip python-setuptools python-wheel gcc
+
+# pip install --upgrade pip setuptools wheel
+# pip install numpy cymem preshed murmurhash blis
+
+# pip install -r requirements.txt
