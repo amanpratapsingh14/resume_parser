@@ -3,7 +3,7 @@
   "email": "sharmalav1408@gmail.com",
   "phone": "+91-8076994108",
   "linkedin": "@harsh-sharma",
-  "summary": "Sr. FrontEnd Developer with nearly 4 years of experience, currently leading Angular development at Kiasa International across Logistics, HRM, and E-Commerce projects. Expertise in building scalable SPAs using Angular with strong command of component-based architecture and frontend best practices. Improved UI load times and operational accuracy through performance-focused development on high-traffic platforms. Mentored 3 junior developers in Angular best practices.",
+  "summary": "Sr. FrontEnd Developer with nearly 4 years of experience, currently leading Angular development at Kiasa International across Logistics, HRM, and E-Commerce projects. Expertise in building scalable SPAs using Angular with strong command of component-based architecture and frontend best practices. Improved UI load times and operational accuracy through performance-focused development on high-traffic platforms. Experienced in mentoring teams and driving code quality through best practices and collaborative leadership. Skilled at translating business needs into interactive dashboards and data-driven modules for HR and fleet operations. Delivered 3 enterprise applications with 100% client satisfaction, reduced UI load time by 30% through code optimization in Safeobuddy Kids, and mentored 3 junior developers in Angular best practices.",
   "skills": [
     "Scalable Web Architecture",
     "User Experience Design",
@@ -12,25 +12,24 @@
     "Performance Optimization Techniques",
     "Data Visualization Strategies",
     "Cloud-Based Solutions",
-    "E-commerce Development",
-    "Real-Time Data Processing",
-    "Team Leadership and Mentoring"
+    "E-commerce Development"
   ],
   "work_experience": [
     {
       "company": "Kiasa International",
       "position": "Angular Developer (Team Lead)",
-      "duration": "Oct 2022 - Present",
+      "duration": "Oct’22 – Present",
       "description": [
         "Leading the development of a logistics management platform using Angular and .NET, ensuring seamless functionality and user experience.",
         "Enhancing UI performance for a kids’ e-commerce platform through strategic code optimizations, significantly reducing load times.",
-        "Building a real-time corporate cab management system, streamlining operations and minimizing booking errors."
+        "Building a real-time corporate cab management system, streamlining operations and minimizing booking errors.",
+        "Conducting code reviews and mentoring developers to maintain high coding standards and promote team growth."
       ]
     },
     {
       "company": "Cubastion Consulting",
       "position": "Full Stack Developer (Angular & Node)",
-      "duration": "Dec 2021 - Oct 2022",
+      "duration": "Dec’21 – Oct’22",
       "description": [
         "Developed a unified HR management system using Angular and Node.js, streamlining payroll, attendance, and departmental workflows.",
         "Built a real-time sales analytics dashboard for Daimler using Angular and PHP, enabling actionable insights into revenue trends.",
@@ -47,30 +46,31 @@
   ],
   "projects": [
     "Smart HRM: Led UI development for employee management workflows using Angular.",
-    "DaimlerMercedes Project: Integrated interactive dashboards for sales analytics."
+    "DaimlerMercedes Project: Integrated interactive dashboards for sales analytics.",
+    "Safeobuddy (Logistics Platform): Built a logistics management system with real-time vehicle tracking, ticket management, and smart sales modules."
   ],
   "certifications": [
     "Java Core",
     "Python Programming (Basic)"
   ],
   "languages": [
-    "Hindi",
-    "English"
+    "Hindi & English"
   ],
   "achievements": [
     "Improved UI load time by 30% through targeted code optimization, enhancing application responsiveness.",
     "Mentored three junior developers in Angular best practices, accelerating their skill development and team contribution.",
-    "Delivered a U.S.-based e-commerce platform that drove strong user engagement & sales growth.",
-    "Led multiple enterprise projects to successful completion, earning recognition for leadership and project management excellence."
+    "Delivered a U.S.-based e-commerce platform that drove strong user engagement & sales growth."
   ],
   "responsibilities": [
     "Contributed to agile, high-performance teams using tools like RxJS, Ag-Grid, Jira, and MySQL for scalable and maintainable development."
   ],
-  "extra_curricular": [
-    "Active contributor to agile, high-performance teams using tools like RxJS, Ag-Grid, Jira, and MySQL for scalable and maintainable development."
-  ],
+  "extra_curricular": [],
   "address": "Sector 49, Gurugram, Haryana, 120018",
   "urls": [
-    "https://www.linkedin.com/in/harsh-sharma"
+    "Safeobuddy (Logistics Platform):",
+    "Safeobuddy Kids:",
+    "Oride Transportation System:",
+    "iSafeAmerica:",
+    "Tech Stack: Angular 8–16, RxJS, Lazy Loading, Ag-Grid, Bootstrap, Jira, GitHub."
   ]
 }

@@ -3,12 +3,31 @@
   "email": "amanpratapsingh1440@gmail.com",
   "phone": "+91-8920560095",
   "linkedin": "in/amanpratapsingh14",
-  "summary": "Full Stack Developer with 2.8 years of experience delivering production-grade web platforms. Proven expertise in designing async REST APIs, optimizing PostgreSQL, and containerizing services. Strong focus on clean architecture, performance improvements, and cross-functional collaboration.",
+  "summary": "Full Stack Developer with 2.8 years of experience delivering production-grade web platforms. Proven expertise in designing async REST APIs using FastAPI and Flask, optimizing PostgreSQL databases, and containerizing services with Docker for cloud-native deployments. Experienced in integrating AWS services (S3), building real-time background tasks using Celery and asyncio, and deploying pipelines using GitHub Actions on GCP. Strong focus on clean architecture, measurable performance improvements, and cross-functional collaboration.",
   "skills": [
-    "Languages & Frameworks: C++, Python Django, FastAPI, JavaScrip, Node.js, Express.js, React.js, Next.js",
-    "Databases: PostgreSQL, MSSQL, MongoDB, Redis",
-    "DevOps Tools: Docker, GitHub Actions, CI/CD, GCP, AWS, Shell Scripting",
-    "Concepts: REST API Design, Numpy, Pandas, DSA"
+    "C++",
+    "Python",
+    "Django",
+    "FastAPI",
+    "Java Script",
+    "Node.js",
+    "Express.js",
+    "React.js",
+    "Next.js",
+    "PostgreSQL",
+    "MSSQL",
+    "MongoDB",
+    "Redis",
+    "Docker",
+    "GitHub Actions",
+    "CI/CD",
+    "GCP",
+    "AWS",
+    "Shell Scripting",
+    "Numpy",
+    "Pandas",
+    "DSA",
+    "REST API Design"
   ],
   "work_experience": [
     {
@@ -16,38 +35,45 @@
       "position": "Software Development Engineer I",
       "duration": "June 2024 - Present",
       "description": [
-        "Developed over 30+ secure RESTful APIs using Python and MSSQL, integrating robust authentication (JWT/OAuth2) and encryption protocols for data security.",
-        "Optimized backend logic and query performance, achieving a 10% reduction in API response time through code refactoring and MSSQL tuning.",
-        "Engineered scalable solutions for the Safeobuddy platform, improving UX and increasing traffic by 15% through better API structuring and frontend-backend synergy."
-      ]
-    },
-    {
-      "company": "Kiasa International Pvt. Ltd",
-      "position": "Full Stack Developer",
-      "duration": "May 2023 - June 2024",
-      "description": [
-        "Collaborated with a travel agency to deliver a production-grade booking platform built using React.js and FastAPI.",
-        "Reduced frontend load time by 20% and automated 90% of manual ops."
+        "Developed and scaled 80+ RESTful APIs across accounting modules like invoicing, ledgers, GST, reports, audits, and balance sheets using FastAPI and PostgreSQL.",
+        "Automated CI/CD pipelines with GitHub Actions, Docker, and shell scripting for efficient and consistent deployments.",
+        "Built reusable backend workflows for reporting, language support, dashboards, and invoice data processing.",
+        "Boosted performance by 40% via async APIs, DB indexing, and response optimization.",
+        "Reduced reporting lag by 60% by modularizing logic and improving data streaming."
       ]
     }
   ],
   "education": [
     {
       "degree": "Bachelor of Technology – Computer Science & Engineering",
-      "university": "Dr. A.P.J. Abdul Kalam Technical University",
+      "university": "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
       "years": "June 2019 - April 2023"
     }
   ],
-  "projects": [],
-  "certifications": [],
-  "languages": [
-    "Languages & Frameworks: C++, Python Django, FastAPI, JavaScrip, Node.js, Express.js, React.js, Next.js"
+  "projects": [
+    "Galaxy Time Tour (Freelance / Industry Collaboration)",
+    "Full Stack Developer May 2022 to Dec 2022"
   ],
-  "achievements": [],
+  "certifications": [
+    "Languages & Frameworks: C++, Python Django, FastAPI, Java Script, Node.js, Express.js, React.js, Next.js."
+  ],
+  "languages": [
+    "Languages & Frameworks: C++, Python Django, FastAPI, Java Script, Node.js, Express.js, React.js, Next.js."
+  ],
+  "achievements": [
+    "Boosted performance by 40% via async APIs, DB indexing, and response optimization.",
+    "Reduced reporting lag by 60% by modularizing logic and improving data streaming."
+  ],
   "responsibilities": [
     "Key Responsibility: Developed over 30+ secure RESTful APIs using Python and MSSQL, integrating robust authentication (JWT/OAuth2) and encryption protocols for data security."
   ],
-  "extra_curricular": [],
+  "extra_curricular": [
+    "HackRank: amanpratap14",
+    "Leetcode: amanpratapsingh14"
+  ],
   "address": "",
-  "urls": []
+  "urls": [
+    "https://github.com/amanpratapsingh14",
+    "https://linkedin.com/in/amanpratapsingh14"
+  ]
 }

@@ -1,200 +1,457 @@
-# Intelligent Resume Parser
+# Resume Parser Project
+
+## Overview
+
+This project is an end-to-end pipeline for parsing resumes (CVs) in PDF or DOCX format and extracting structured information using a combination of LLM (Ollama + Qwen3) and custom-trained spaCy NER. It provides both an API (FastAPI) and a Streamlit frontend for uploading resumes and viewing results.
+
+**Key Features:**
+- Accepts resumes in PDF or DOCX format.
+- Extracts: Name, Contact Info, Summary, Skills, Work Experience, Education, Certifications, Languages, Projects, and more.
+- Uses an LLM (Qwen3 via Ollama) for initial parsing and schema normalization.
+- Trains a custom spaCy NER model on the extracted data for further automation.
+- Provides both API and web UI for interaction.
 
 ---
 
-## How to Run (Quick Start)
+## Installation
 
-### 1. **Build the Docker Image**
-```bash
-sudo docker build -t resume-pipeline .
+### System Requirements
+- Python 3.10+
+- GCC and build tools
+- 4GB+ RAM (for LLM model)
+
+### Multi-OS Installation
+
+#### Ubuntu/Debian
+```sh
+sudo apt update
+sudo apt install -y build-essential python3-pip python3-venv python3-dev
 ```
 
-### 2. **Run the Docker Container**
-```bash
-sudo docker run -p 8080:8080 \
-  -v $(pwd)/resume_folder:/app/resume_folder \
-  -v $(pwd)/output_json:/app/output_json \
-  -v $(pwd)/process_output:/app/process_output \
-  resume-pipeline
+#### CentOS/RHEL/Fedora
+```sh
+# CentOS/RHEL
+sudo yum groupinstall "Development Tools"
+sudo yum install python3-pip python3-devel
+
+# Fedora
+sudo dnf groupinstall "Development Tools"
+sudo dnf install python3-pip python3-devel
 ```
 
-- The **FastAPI backend** will be available at: [http://localhost:8080/docs](http://localhost:8080/docs)
-- (If you want to run the Streamlit frontend, see below for multi-service setup.)
+#### macOS
+```sh
+# Install Homebrew if not already installed
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
----
-
-## Ollama Installation (Required for LLM Parsing)
-
-Ollama must be installed and running on your host machine before starting the backend.
-
-### Quick Setup (Recommended)
-```bash
-bash setup_ollama.sh
+# Install dependencies
+brew install python3 gcc
 ```
 
-### Manual Steps
-1. **Install Ollama (Linux/macOS):**
-   ```bash
-   curl -fsSL https://ollama.com/install.sh | sh
-   ```
-2. **Start Ollama Service:**
-   ```bash
-   ollama serve &
-   ```
-3. **Download the Required Model:**
-   ```bash
-   ollama run qwen3:0.6b
-   ```
+#### Windows
+```sh
+# Install Visual Studio Build Tools
+# Download from: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022
 
----
-
-## How to Run Both Backend and Frontend (Docker Compose)
-
-You can run both the FastAPI backend (on port 8080) and the Streamlit frontend (on port 3000) together using Docker Compose:
-
-### 1. **Start Both Services**
-```bash
-sudo docker compose up --build
+# Install Python from: https://www.python.org/downloads/
 ```
 
-- **Backend (FastAPI):** [http://localhost:8080/docs](http://localhost:8080/docs)
-- **Frontend (Streamlit):** [http://localhost:3000](http://localhost:3000)
-
-Both services share the same folders for resumes, outputs, and logs via Docker volumes.
-
-To stop the services, press `Ctrl+C` in the terminal, then run:
-```bash
-sudo docker compose down
+#### Arch Linux
+```sh
+sudo pacman -S base-devel python-pip python-setuptools python-wheel gcc
 ```
 
----
-
-## Project Flow
-1. **Upload Resume:**
-   - Use the API at `/upload_resume` (see FastAPI docs) or the Streamlit frontend (if running) to upload a PDF or DOCX resume.
-2. **Processing:**
-   - The backend extracts text, parses the resume using an LLM, and outputs structured JSON.
-3. **Output:**
-   - Results are saved in the `output_json/` directory on your host machine.
-4. **Logs:**
-   - Processing logs are saved in `process_output/`.
-
----
-
-## Features
-- Accepts PDF and DOCX resumes
-- Extracts: Name, Contact Info, Summary, Skills, Work Experience, Education, Certifications, Languages, Projects, and more
-- Handles various resume formats and noise
-- Outputs structured JSON in a hierarchical format
-- Modular, testable, and ready for integration
-
----
-
-## Project Structure
-```text
-resume_parser/
-  app/                  # Backend logic (FastAPI, extraction, NER, utils)
-  frontend/             # Streamlit web UI
-  output_json/          # Output JSONs and raw text
-  uploaded_resumes/     # Uploaded files
-  requirements.txt      # Python dependencies
-  dockerfile            # Docker setup
-  orchestrator.py       # Orchestrates backend/frontend
-  README.md             # This file
+### Python Environment Setup
+```sh
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install --upgrade pip setuptools wheel
 ```
 
----
-
-## Quickstart Workflow
-
-### 1. **Clone the Repository**
-```bash
-git clone <repo-url>
-cd resume_parser
+### Install Python Packages
+Install core dependencies first to avoid build issues:
+```sh
+pip install numpy cymem preshed murmurhash blis
 ```
-
-### 2. **Install Python Dependencies**
-It is recommended to use a virtual environment:
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install --upgrade pip
+Then install all project requirements:
+```sh
 pip install -r requirements.txt
 ```
 
-### 3. **Install spaCy Model**
-```bash
-python -m spacy download en_core_web_sm
-```
-Or, as in requirements.txt:
-```bash
-pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
-```
-
-### 4. **Install Ollama and Download LLM Model**
-Ollama is required for LLM-based parsing. Install and run the model:
-```bash
-# Install Ollama (Linux/macOS)
+### Ollama LLM Setup
+Install Ollama:
+```sh
+# Linux/macOS
 curl -fsSL https://ollama.com/install.sh | sh
 
-# Start Ollama service (if not already running)
-ollama serve &
+# Windows
+# Download from: https://ollama.com/download
+```
 
-# Download the required model (qwen3:0.6b)
+Start the Qwen3 model:
+```sh
 ollama run qwen3:0.6b
 ```
 
-### 5. **Run the Backend (FastAPI) and Frontend (Streamlit)**
-You can run both using the orchestrator script:
-```bash
-python orchestrator.py
+### spaCy Model Setup
+Download the English model:
+```sh
+python -m spacy download en_core_web_sm
 ```
-- FastAPI backend: [http://localhost:8080/docs](http://localhost:8080/docs)
-- Streamlit UI: [http://localhost:8501](http://localhost:8501)
 
-Alternatively, run them separately:
+---
+
+## Folder Structure
+
+```
+resume_parser/
+│
+├── app/                    # Backend logic and scripts
+│   ├── main.py             # FastAPI backend (resume upload, parsing, NER update)
+│   ├── generate_ner_training_data.py  # Script to generate NER training data from parsed resumes
+│   ├── extract_raw_texts.py           # (Optional) Script to extract raw text from resumes
+│   ├── ner_training_utils.py          # Helper functions for NER data formatting
+│   ├── spacy_config.cfg    # spaCy training configuration
+│
+├── frontend/
+│   └── streamlit_app.py    # Streamlit web UI for uploading resumes and viewing results
+│
+├── output_json/            # Output directory for parsed JSON and raw text files
+│   ├── <resume>.json
+│   └── <resume>_raw.txt
+│
+├── uploaded_resumes/       # Place to upload or drop new resumes (PDF/DOCX)
+│
+├── process_output/         # Logs and process outputs
+│   └── process_log.txt
+│
+├── ner_model/              # Directory for trained spaCy NER model
+│
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
+└── ... (other files)
+```
+
+---
+
+## Code Flow
+
+1. **Resume Upload**
+   - User uploads a resume via the API (`/upload_resume`) or the Streamlit UI.
+   - The file is saved to `uploaded_resumes/`.
+
+2. **Text Extraction & LLM Parsing**
+   - The backend extracts raw text from the resume.
+   - The extracted text is sent to the Qwen3 LLM (via Ollama) with a prompt to produce a normalized JSON structure.
+
+3. **Output Storage**
+   - The parsed JSON and raw text are saved in `output_json/`.
+
+4. **NER Training Data Generation**
+   - The script `app/generate_ner_training_data.py` reads all parsed JSONs and raw texts, and generates a spaCy-compatible NER training file (`ner_training_data.jsonl`).
+
+5. **NER Model Training**
+   - The spaCy config (`app/spacy_config.cfg`) is used to validate and train a custom NER model using the generated data.
+   - The trained model is saved in `ner_model/`.
+
+6. **API/Frontend Usage**
+   - The API can be used to upload new resumes and trigger the pipeline.
+   - The Streamlit frontend provides a user-friendly interface for uploads and viewing results.
+
+---
+
+## API Documentation
+
+### Base URL
+```
+http://localhost:8000
+```
+
+### Endpoints
+
+#### POST /upload_resume
+Upload a resume file (PDF or DOCX) for parsing.
+
+**Request:**
+- **Content-Type:** `multipart/form-data`
+- **Body:** Form data with file field
+
+**Parameters:**
+- `file` (required): Resume file in PDF or DOCX format
+
+**Response:**
+- **Status:** 200 OK
+- **Content-Type:** `application/json`
+- **Body:** Parsed resume data in JSON format
+
+**Example Request (cURL):**
 ```bash
-# Backend
-uvicorn app.main:app --reload --port 8080
-# Frontend
+curl -X POST "http://localhost:8000/upload_resume" \
+     -H "accept: application/json" \
+     -H "Content-Type: multipart/form-data" \
+     -F "file=@/path/to/your/resume.pdf"
+```
+
+**Example Request (Python):**
+```python
+import requests
+
+url = "http://localhost:8000/upload_resume"
+files = {"file": open("resume.pdf", "rb")}
+
+response = requests.post(url, files=files)
+if response.status_code == 200:
+    data = response.json()
+    print("Parsed data:", data)
+else:
+    print("Error:", response.text)
+```
+
+**Example Response:**
+```json
+{
+  "name": "John Doe",
+  "email": "john.doe@email.com",
+  "phone": "+1-555-123-4567",
+  "linkedin": "linkedin.com/in/johndoe",
+  "summary": "Experienced software developer with 5+ years in web development...",
+  "skills": ["Python", "JavaScript", "React", "Node.js"],
+  "work_experience": [
+    {
+      "company": "Tech Corp",
+      "position": "Senior Developer",
+      "duration": "2020-2023",
+      "description": ["Led development of web applications", "Mentored junior developers"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "university": "University of Technology",
+      "years": "2016-2020"
+    }
+  ],
+  "projects": ["E-commerce platform", "Mobile app development"],
+  "certifications": ["AWS Certified Developer"],
+  "languages": ["English", "Spanish"],
+  "achievements": ["Employee of the Year 2022"],
+  "responsibilities": ["Code review", "Technical architecture"],
+  "extra_curricular": ["Open source contributor"],
+  "address": "123 Main St, City, State 12345",
+  "urls": ["github.com/johndoe"]
+}
+```
+
+**Error Responses:**
+- `400 Bad Request`: Invalid file type or missing file
+- `500 Internal Server Error`: Processing error
+
+---
+
+## Advanced Usage
+
+### 1. Batch Processing
+Process multiple resumes at once:
+
+```python
+import os
+import requests
+from pathlib import Path
+
+def batch_process_resumes(directory):
+    url = "http://localhost:8000/upload_resume"
+    results = []
+    
+    for file_path in Path(directory).glob("*.pdf"):
+        with open(file_path, "rb") as f:
+            files = {"file": f}
+            response = requests.post(url, files=files)
+            if response.status_code == 200:
+                results.append({
+                    "file": file_path.name,
+                    "data": response.json()
+                })
+            else:
+                print(f"Error processing {file_path}: {response.text}")
+    
+    return results
+
+# Usage
+results = batch_process_resumes("./resumes/")
+```
+
+### 2. Custom NER Training
+Train the model with your own data:
+
+```python
+# 1. Generate training data
+import subprocess
+subprocess.run(["python", "app/generate_ner_training_data.py"])
+
+# 2. Validate data
+subprocess.run(["python", "-m", "spacy", "debug", "data", "app/spacy_config.cfg"])
+
+# 3. Train model
+subprocess.run([
+    "python", "-m", "spacy", "train", "app/spacy_config.cfg",
+    "--output", "./ner_model"
+])
+```
+
+### 3. Using the Trained NER Model
+```python
+import spacy
+
+# Load the trained model
+nlp = spacy.load("./ner_model")
+
+# Process text
+text = "John Doe is a Python developer at Tech Corp"
+doc = nlp(text)
+
+# Extract entities
+for ent in doc.ents:
+    print(f"{ent.text} - {ent.label_}")
+```
+
+### 4. Integration with External Systems
+```python
+import requests
+import json
+
+class ResumeParserAPI:
+    def __init__(self, base_url="http://localhost:8000"):
+        self.base_url = base_url
+    
+    def parse_resume(self, file_path):
+        with open(file_path, "rb") as f:
+            files = {"file": f}
+            response = requests.post(f"{self.base_url}/upload_resume", files=files)
+            return response.json() if response.status_code == 200 else None
+    
+    def get_candidates_by_skill(self, skill, output_dir="output_json"):
+        candidates = []
+        for file_path in Path(output_dir).glob("*.json"):
+            with open(file_path) as f:
+                data = json.load(f)
+                if skill.lower() in [s.lower() for s in data.get("skills", [])]:
+                    candidates.append(data)
+        return candidates
+
+# Usage
+parser = ResumeParserAPI()
+resume_data = parser.parse_resume("candidate_resume.pdf")
+python_devs = parser.get_candidates_by_skill("Python")
+```
+
+---
+
+## Step-by-Step Usage
+
+### 1. Data Preparation & NER Training
+
+1. Generate NER training data from resume JSONs:
+   ```sh
+   python app/generate_ner_training_data.py
+   ```
+2. Validate your data:
+   ```sh
+   python -m spacy debug data app/spacy_config.cfg
+   ```
+3. Train the NER model:
+   ```sh
+   python -m spacy train app/spacy_config.cfg --output ./ner_model
+   ```
+
+### 2. Running the API
+
+Start the FastAPI server:
+```sh
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
+### 3. Running the Streamlit Frontend
+
+```sh
 streamlit run frontend/streamlit_app.py
 ```
 
----
+### 4. Using the Web Interface
 
-## Usage
-- **Web UI:** Open [http://localhost:8501](http://localhost:8501) and upload a PDF or DOCX resume. View output as JSON or in a table.
-- **API:** Use `/upload_resume` endpoint (see FastAPI docs at [http://localhost:8080/docs](http://localhost:8080/docs)).
-- **Outputs:** Parsed results are saved in `output_json/` as JSON files.
-
----
-
-## Model Details
-- **LLM Model:** Uses [qwen3:0.6b](https://ollama.com/library/qwen3) via Ollama for parsing resumes into structured JSON.
-- **spaCy NER:** For custom NER training, see scripts in `app/` and use `ner_training_data.json`.
+1. Open your browser to `http://localhost:8501`
+2. Upload a PDF or DOCX resume
+3. Choose between JSON or tabular view
+4. View the parsed results
 
 ---
 
-## Training Custom NER (Optional)
-1. Place resumes in `resume_folder/`.
-2. Run extraction and NER data generation:
-   ```bash
-   python app/extract_raw_texts.py
-   python app/generate_ner_training_data.py
-   # Convert and train with spaCy as needed
-   ```
-3. See `app/spacy_config.cfg` for training config.
+## Configuration
 
----
-
-## Docker (Optional)
-Build and run everything in a container:
-```bash
-docker build -t resume-parser .
-docker run -p 8080:8080 -p 8501:8501 resume-parser
+### Environment Variables
+```sh
+export OLLAMA_HOST=http://localhost:11434
+export SPACY_MODEL=en_core_web_sm
+export UPLOAD_DIR=uploaded_resumes
+export OUTPUT_DIR=output_json
 ```
+
+### Customizing the LLM Prompt
+Edit the `PROMPT_TEMPLATE` in `app/main.py` to modify how the LLM parses resumes.
+
+### spaCy Configuration
+Modify `app/spacy_config.cfg` to adjust training parameters, model architecture, or add new components.
+
+---
+
+## Notes
+
+- Ensure `ollama run qwen3:0.6b` is running before uploading resumes.
+- Place resumes in `uploaded_resumes/` or use the API/Streamlit UI to upload.
+- Output JSON and raw text will be saved in `output_json/`.
+- NER training data is generated from these outputs.
+- The trained spaCy model will be saved in `ner_model/`.
 
 ---
 
 ## Troubleshooting
-- **Ollama not found:** Ensure `ollama`
+
+### Common Issues
+
+**Build Errors:**
+- Ensure all system dependencies are installed
+- Use a compatible Python version (3.10+)
+- Install core scientific packages first: `pip install numpy cymem preshed murmurhash blis`
+
+**LLM Not Responding:**
+- Make sure Ollama is running: `ollama serve`
+- Check if the model is loaded: `ollama list`
+- Verify the model name in `app/main.py` matches your installed model
+
+**spaCy Training Issues:**
+- Check that your NER training data contains valid entities
+- Ensure the training data format is correct (JSONL)
+- Validate the configuration: `python -m spacy debug data app/spacy_config.cfg`
+
+**File Upload Errors:**
+- Only PDF and DOCX files are supported
+- Check file permissions and disk space
+- Ensure the upload directory exists and is writable
+
+### Performance Optimization
+
+**For Large Scale Processing:**
+- Use batch processing for multiple resumes
+- Consider using a GPU for spaCy training
+- Implement caching for repeated requests
+- Use async processing for better throughput
+
+**Memory Optimization:**
+- Process resumes in smaller batches
+- Clear memory after processing large files
+- Use streaming for large file uploads
+
+---
+
+## License
+
+MIT License (or your chosen license)
